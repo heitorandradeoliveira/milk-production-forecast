@@ -91,6 +91,16 @@ def ajustar_sarima_plotly(ts_data, periodo_previsao):
 # =========================
 with st.sidebar:
     uploaded_file = st.file_uploader("📂 Escolha o arquivo CSV:", type=['csv'])
+
+    st.markdown("### Exemplo de conteúdo esperado no CSV:")
+    st.code("""\
+            589
+            561
+            640
+            656
+            ...
+
+            """, language="plaintext")
     if uploaded_file:
         data_inicio = date(2000, 1, 1)
         periodo = st.date_input("📅 Período Inicial da Série", data_inicio)
