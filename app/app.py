@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from datetime import date, datetime
 from io import StringIO
 
+
 # =========================
 # CONFIGURAÇÕES INICIAIS
 # =========================
