@@ -1,0 +1,24 @@
+# Ignorar todos os arquivos .zip
+*.zip
+# Ignorar todos os arquivos .parquet
+*.parquet
+# Ignorar todos os arquivos .xlsx
+*.xlsx
+
+# Ignorar todos os arquivos .csv
+# *.csv
+# Ignorar todos os arquivos .gzip
+*.gz
+# Ignorar todos os arquivos .pkl
+# *.pkl
+# Ignorar pastas específicas
+/logs/
+/tmp/
+*.ipynb_checkpoints/
+data/
+__pycache__/
+*.pkl
+# Ignorar banco de dados grande
+data/raw/database.sqlite
+
+*.yml
