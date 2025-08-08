@@ -34,7 +34,7 @@ Este projeto oferece uma aplicação interativa para análise e previsão da pro
 
 1. **Acesse a aplicação** via Streamlit:
 
-   [▶ Abrir Aplicação](https://milk-production-forecast-hao.streamlit.app)
+   [▶ Abrir Aplicação](https://milk-appuction-forecast-hao.streamlit.app)
 
 2. **Carregue o arquivo CSV** contendo os valores mensais de produção de leite (uma coluna, sem cabeçalho e sem datas).
    Exemplo de arquivo:
