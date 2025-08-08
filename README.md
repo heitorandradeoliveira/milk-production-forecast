@@ -45,6 +45,7 @@ Este projeto oferece uma aplicação interativa para análise e previsão da pro
    2700
    2600
    2750
+   2850
    ```
 
 3. **Defina a data inicial** no seletor de data.
