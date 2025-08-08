@@ -5,6 +5,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 import plotly.graph_objects as go
 from datetime import date, datetime
 from io import StringIO
+from io import BytesIO
 
 
 # =========================
@@ -134,15 +135,32 @@ if uploaded_file and processar:
             st.subheader("📄 Dados da Previsão")
             st.dataframe(previsao_df)
 
-            # Botão para exportar CSV
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            csv = previsao_df.to_csv(index=False).encode('utf-8')
-            st.download_button(
-                label="💾 Baixar CSV",
-                data=csv,
-                file_name=f"previsao_{timestamp}.csv",
-                mime="text/csv"
-            )
+
+            # Cria duas colunas dentro da col3 para os botões lado a lado
+            btn_col1, btn_col2 = st.columns(2)
+
+            with btn_col1:
+                csv = previsao_df.to_csv(index=False).encode('utf-8')
+                st.download_button(
+                    label="💾 Baixar CSV",
+                    data=csv,
+                    file_name=f"previsao_{timestamp}.csv",
+                    mime="text/csv"
+                )
+
+            with btn_col2:
+                output = BytesIO()
+                with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+                    previsao_df.to_excel(
+                        writer, index=False, sheet_name='Previsão')
+                excel_data = output.getvalue()
+                st.download_button(
+                    label="💾 Baixar Excel",
+                    data=excel_data,
+                    file_name=f"previsao_{timestamp}.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
 
     except Exception as e:
         st.error(f"❌ Erro ao processar os dados: {e}")
