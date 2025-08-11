@@ -20,7 +20,7 @@ Este projeto oferece uma aplicação interativa para análise e previsão da pro
 ```
 ├── app/
 │   ├── app.py # Código da aplicação Streamlit
-│   ├── monthly-milk-production-pounds-p.csv # base de dados para input
+│   ├── monthly-milk-production-pounds-p.csv # base de dados para input no app
 ├── assets/
 ├── LICENSE # Licença MIT
 ├── README.md # Documentação do projeto
@@ -35,7 +35,6 @@ Este projeto oferece uma aplicação interativa para análise e previsão da pro
 1. **Acesse a aplicação** via Streamlit:
 
    [▶ Abrir Aplicação](https://milk-appuction-forecast-hao.streamlit.app)
-
 2. **Carregue o arquivo CSV** contendo os valores mensais de produção de leite (uma coluna, sem cabeçalho e sem datas).
    Exemplo de arquivo:
 
@@ -47,21 +46,17 @@ Este projeto oferece uma aplicação interativa para análise e previsão da pro
    2750
    2850
    ```
-
 3. **Defina a data inicial** no seletor de data.
 
    - Exemplo: se o primeiro valor é de **janeiro de 2020** , escolha **01/01/2020** .
-
 4. **Escolha o período de previsão** (quantos meses quer prever).
 
    - Pode variar de **1 a 48 meses** .
-
 5. **Clique em "Processar"** para gerar:
 
    - Decomposição da série (tendência, sazonalidade e resíduo)
    - Gráfico com histórico e previsão
    - Tabela com valores previstos
-
 6. **Exportar dados** das previsões em formato **CSV**.
 7. **Atualize os dados** sempre que necessário, carregando um CSV atualizado para recalcular as previsões.
 
